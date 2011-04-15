@@ -1,0 +1,28 @@
+= Neural Net Heatbugs
+
+This is an old project which some folks might find of interest, so I'm
+putting it up on GitHub.  MIT licensed.  It's an old and heavily incremented
+project which I never expected anyone to see.  I've added docs to the code, but
+I'm not proud of the code quality.  
+
+Brief description:
+
+    * This is RePast's heatbugs agent simulation that's been sexed up with genetic algorithms, neural networks, etc.
+    *
+
+== Heatbugs
+
+Simple: each agent should move around to find the spot that gets them the perfect temperature.
+    * There are a number of heatsources on the grid.
+
+== Build + Run
+
+You probably don't *need* NetBeans to build it, but I've only ever used NetBeans, so:
+    * Open the project in NetBeans and run it...
+
+== You should try...
+
+== Architecture
+
+Terminology:
+    * 
