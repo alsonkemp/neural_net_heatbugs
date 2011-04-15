@@ -8,12 +8,23 @@ I'm not proud of the code quality.
 Brief description:
 
     * This is RePast's heatbugs agent simulation that's been sexed up with genetic algorithms, neural networks, etc.
-    *
+    * Each bug has a "genotype" that's just a bitstring.
+    * Neural networks are constructed from the genotype.
+    * The genotype or bitstring is parsed in order to generate a list of rules.
+    * The rules are repeatedly applied to a "predicate", or starting, neural network
+      in order to build the neural network the bug uses.
+    * The resulting neural network is used to process inputs to the bug and to produce
+      outputs to move the bug.
 
 == Heatbugs
 
 Simple: each agent should move around to find the spot that gets them the perfect temperature.
     * There are a number of heatsources on the grid.
+    * Each heatbug also gives off heat (configurabl).
+    * After a period of time, the Reaper runs and removes bugs from the space.
+      Bugs can get reaped for various reasons:
+     * Not having a nice temperature after their "childhood".
+     * Never having moved during "childhood".
 
 == Build + Run
 
@@ -22,7 +33,35 @@ You probably don't *need* NetBeans to build it, but I've only ever used NetBeans
 
 == You should try...
 
+hmm...  I should add interesting parameters here...
+
 == Architecture
 
+Code:
+    * src/uchicago/src/sim/nnheatBugs/HeatBugsModel.java - this is the simulation and is where everything is controlled.
+    * src/uchicago/src/sim/nnheatBugs/HeatBug.java - this is a bug.
+    * src/uchicago/src/sim/network/ActivationFunction.java - this is an activation function for a neuron.
+    * src/uchicago/src/sim/network/NeuralNetworkNode.java - this is a neuron.
+    * src/uchicago/src/sim/network/CHHNeuralNetworkNode.java - this is a particular type of neuron.
+    * src/uchicago/src/sim/network/SigmoidNeuralNetworkNode.java - this is a particular type of neuron.
+    * src/uchicago/src/sim/graphgrammar/* - a giant flail...  But the gist is that this
+      is the code that converts genomes -> neural networks...  There are a number of ways
+      it can do the conversion...
+
 Terminology:
-    * 
+    * Heatbug/Agent - the thing that's moving around.
+    * Genotype - a BitString representing the genes of a bug.
+    * Rule - matches a spot on a Matrix and might expand or overlap a set of values on
+      matrix.
+    * Matrix - a (probably sparce) matrix of node-node connections.  All inputs are on one
+      side and all outputs are on the other; a value V at (M,N) says that node M is
+      connected to node N with value V.
+    * Structure - this is just a string describing some basic characteristics of
+      a neural net.  This was introduced in order to prevent a single neural net
+      from dominating and is used to prevent inbreeding.
+
+== Warnings
+    * It had been long enough since I'd coded that I'd kinda forgotten about recursion,
+      so the code to apply the grammar to the connection matrix is fabulously 
+      complicated.
+    * I recycle frequently used objects to prevent GCs, so you'll see Factory objects for Matrices, etc.
