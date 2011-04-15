@@ -34,6 +34,8 @@ You probably don't *need* NetBeans to build it, but I've only ever used NetBeans
       run the simulation.
     * A bunch of windows will then pop up.
     * Note!: the actual graphical display will minimize itself to speed the simulation.
+    * Wait 5 minutes.
+    * Check out the simulation to see if agents are exhibiting interesting behavior...
 
 == You should try...
 
