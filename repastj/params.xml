@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Repast:Params xmlns:Repast="http://www.src.uchicago.edu" name="myparams">
-<Repast:ParamBlock runs="4">
-<Repast:Param name="RuleType" type="list" value="1 2 3 4" />
-
-</Repast:ParamBlock>
-</Repast:Params>
