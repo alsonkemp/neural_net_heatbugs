@@ -30,6 +30,10 @@ Simple: each agent should move around to find the spot that gets them the perfec
 
 You probably don't *need* NetBeans to build it, but I've only ever used NetBeans, so:
     * Open the project in NetBeans and run it...
+    * Assuming that it runs, you'll get two windows.  Click the play button to 
+      run the simulation.
+    * A bunch of windows will then pop up.
+    * Note!: the actual graphical display will minimize itself to speed the simulation.
 
 == You should try...
 
